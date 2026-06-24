@@ -1,7 +1,7 @@
 function name() {
   console.log(50 * 2);
 }
-name(50, 2);
+// name(50, 2);
 
 function one() {
   const username = "kareem";
@@ -9,10 +9,10 @@ function one() {
     const website = "facebook";
     console.log(username);
   }
-  console.log(website);
+  // console.log(website);
   two();
 }
-one();
+// one();
 
 if (true) {
   const username = "Abdulkareem";
@@ -40,9 +40,9 @@ const user = {
     // console.log(this);
   },
 };
-user.wellcomeMassage();
-user.username = "Shamshad";
-user.wellcomeMassage();
+// user.wellcomeMassage();
+// user.username = "Shamshad";
+// user.wellcomeMassage();
 // console.log(this);
 
 function sayMyname() {
@@ -55,7 +55,61 @@ function sayMyname() {
 }
 // sayMyname();
 
+// function addTwoNumder(number1, number2) {
+//   console.log(number1 + number2);
+// }
 function addTwoNumder(number1, number2) {
-  console.log(number1 + number2);
+  let result = number1 + number2;
+  return result;
 }
-addTwoNumder(10, 5);
+const result = addTwoNumder(3, 5);
+
+// console.log("Result: ", result);
+
+function loginUseRMassagr(username) {
+  if (username === undefined) {
+    console.log("please enter a username");
+  }
+  return `${username} just logged in`;
+}
+// console.log(loginUseRMassagr("kareem"));
+// console.log(loginUseRMassagr("abdul_kareem"));
+
+function rev(num) {
+  let str = String(num);
+  let rev_str = " ";
+  for (let i = str.length; i >= 0; i--) {
+    rev_str += str[i];
+  }
+  // console.log(rev_str);
+}
+// rev(7149089);
+
+// family functions
+
+function one(username) {
+  console.log(username);
+}
+one("Shamahad");
+
+let Name = "kareem";
+let fname = "shamshad";
+let cast = "sangrasi";
+let from = "sanghar";
+
+console.log(Name);
+console.log(fname);
+console.log(cast);
+console.log(from);
+
+console.log("Kareem");
+console.log("Shamshad");
+console.log("sangrasi");
+console.log("sanghar");
+
+function para() {
+  const paraghap =
+    "My name is kareem ,my father name is shamshad, I live in karachii";
+  console.log(paraghap);
+}
+para();
