@@ -73,9 +73,3 @@ setInterval(function () {
   clock.innerHTML = date.toLocaleTimeString();
 }, 1000);
 ```
-
-## Project 4 Solution
-
-```javascript
-
-```
