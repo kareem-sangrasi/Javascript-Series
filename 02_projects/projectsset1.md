@@ -73,3 +73,79 @@ setInterval(function () {
   clock.innerHTML = date.toLocaleTimeString();
 }, 1000);
 ```
+
+## Project 4 Solution
+
+```javascript
+const randomNumber = parseInt(Math.random() * 100 + 1);
+
+const submit = document.querySelector("#subt");
+const userInput = document.querySelector("#guessField");
+const gussSlot = document.querySelector("guesses");
+const remaining = document.querySelector("lastResult");
+const lowOrHi = document.querySelector("lowOrHi");
+const startOver = document.querySelector("resultParas");
+
+const p = document.createElement("p");
+
+let prevGuess = [];
+let numGuess = 1;
+
+let playGame = true;
+
+if (playGame) {
+  submit.addEventListener("click", function (e) {
+    e.preventDefault();
+    const guess = parseInt(userInput.value);
+    console.log(guess);
+    validateGuess(guess);
+  });
+}
+
+function validateGuess(guess) {
+  if (isNaN(guess)) {
+    alert("PLease Enter a Valid Number");
+  } else if (guess < 1) {
+    alert("PLease Enter a Number More Than 1");
+  } else if (guess > 100) {
+    alert("PLease Enter a Number Less Than 100");
+  } else {
+    prevGuess.push(guess);
+    if (numGuess === 11) {
+      displayGuess(guess);
+      displayMassage(`Game Over, Random Number Was ${randomNumber}`);
+      endGame();
+    } else {
+      displayGuess(guess);
+      checkGuess(guess);
+    }
+  }
+}
+
+function checkGuess(guess) {
+  if (guess === randomNumber) {
+    displayMassage(`You guessed it right`);
+    endGame();
+  } else if (guess < randomNumber) {
+    displayMassage(`Number is TOOO low`);
+  } else if (guess > randomNumber) {
+    displayMassage(`Number is TOOO high`);
+  }
+}
+
+function displayGuess(guess) {
+  //
+}
+
+function displayMassage(massage) {
+  //
+}
+
+function endGame() {
+  //
+}
+
+function newGame() {
+  //
+}
+```
