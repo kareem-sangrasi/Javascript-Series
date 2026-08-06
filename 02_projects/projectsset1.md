@@ -39,8 +39,8 @@ buttons.forEach(function (button) {
 
 ```javascript
 const form = document.querySelector("form");
-// this usecase will give you empty
-// const height = parseInt(document.querySelector('#height').value)
+//this usecase will give you empty
+const height = parseInt(document.querySelector("#height").value);
 
 form.addEventListener("submit", function (e) {
   e.preventDefault();
@@ -81,10 +81,10 @@ const randomNumber = parseInt(Math.random() * 100 + 1);
 
 const submit = document.querySelector("#subt");
 const userInput = document.querySelector("#guessField");
-const gussSlot = document.querySelector("guesses");
-const remaining = document.querySelector("lastResult");
-const lowOrHi = document.querySelector("lowOrHi");
-const startOver = document.querySelector("resultParas");
+const gussSlot = document.querySelector(".guesses");
+const remaining = document.querySelector(".lastResult");
+const lowOrHi = document.querySelector(".lowOrHi");
+const startOver = document.querySelector(".resultParas");
 
 const p = document.createElement("p");
 
@@ -104,16 +104,16 @@ if (playGame) {
 
 function validateGuess(guess) {
   if (isNaN(guess)) {
-    alert("PLease Enter a Valid Number");
+    alert("PLease enter a valid number");
   } else if (guess < 1) {
-    alert("PLease Enter a Number More Than 1");
+    alert("PLease enter a number more than 1");
   } else if (guess > 100) {
-    alert("PLease Enter a Number Less Than 100");
+    alert("PLease enter a number less than 100");
   } else {
     prevGuess.push(guess);
     if (numGuess === 11) {
       displayGuess(guess);
-      displayMassage(`Game Over, Random Number Was ${randomNumber}`);
+      displayMassage(`Game Over, Random number was ${randomNumber}`);
       endGame();
     } else {
       displayGuess(guess);
@@ -135,13 +135,13 @@ function checkGuess(guess) {
 
 function displayGuess(guess) {
   userInput.value = "";
-  guessSlot.innerHTML += `${guess}`;
+  guessSlot.innerHTML += `${guess},  `;
   numGuess++;
   remaining.innerHTML = `${11 - numGuess}`;
 }
 
 function displayMassage(massage) {
-  //
+  lowOrHi.innerHTML = `<h2>${massage}</h2>`;
 }
 
 function endGame() {
